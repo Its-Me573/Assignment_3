@@ -8,6 +8,7 @@ Stock::Stock(std::string symbol, double sharePrice){
     this->symbol = symbol;
     this->sharePrice = sharePrice;
     shares = 0;
+    cost = 0.0;
 }
 
 /** add new bought shares to total shares, increment the cost with share number * new sharePrice
@@ -79,11 +80,11 @@ void Stock::Print() const{
     std::cout << "profit: $ " << std::fixed << std::setprecision(2) << GetProfit() << std::endl;
 }
 
-int main(){
-    Stock testingAStock("AAA", 0.5);
+//int main(){
+//    Stock testingAStock("AAA", 0.5);
     //std::cout << testingAStock.GetSharePrice() << std::endl;
-    testingAStock.Print();
-}
+//    testingAStock.Print();
+//}
 
 
 

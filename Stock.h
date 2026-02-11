@@ -1,5 +1,5 @@
-#ifndef Stock_H
-#define Stock_H
+#ifndef STOCK_H
+#define STOCK_H
 
 #include <string>
 #include <iostream>
