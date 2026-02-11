@@ -4,7 +4,7 @@
 #include <vector>
 
 class Stock{
-    private:
+    protected:
         std::string symbol;
         int shares;
         double cost;
