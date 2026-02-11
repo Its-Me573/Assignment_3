@@ -4,7 +4,7 @@
 * @param symbol is the representation of the stock name
 * @param sharePrice is the price of the share, default value of 0.0 
 */
-Stock::Stock(std::string symbol, double sharePrice = 0.0){
+Stock::Stock(std::string symbol, double sharePrice){
     this->symbol = symbol;
     this->sharePrice = sharePrice;
     shares = 0;
@@ -45,6 +45,44 @@ double Stock::GetSharePrice() const{
 */
 void Stock::SetSharePrice(double sharePrice){
     this->sharePrice = sharePrice;
+}
+
+/** return the total cost paid for all shares
+* @return the cost of all shares 
+*/
+double Stock::GetCost() const{
+    return cost;
+}
+
+/** calculates the current market value through (share * sharePrice)
+* @return the calculated market value;
+*/
+double Stock::GetMarketValue() const{
+    return (shares * sharePrice);
+}
+
+/** computes the profit by subtracting market value from current cost
+*@return the current profit 
+*/
+double Stock::GetProfit() const{
+    return (GetMarketValue() - GetCost());
+}
+
+/** Prints the stock details including type, symbol, value, cost, and profit
+ * With values set to 2 decimal places
+*/
+void Stock::Print() const{
+    
+    std::cout << "Stock (" << GetSymbol() << "):" << std::endl;
+    std::cout << " value: $ " << std::fixed << std::setprecision(2) << GetMarketValue() << std::endl;
+    std::cout << "  cost: $ " << std::fixed << std::setprecision(2) << GetCost() << std::endl;
+    std::cout << "profit: $ " << std::fixed << std::setprecision(2) << GetProfit() << std::endl;
+}
+
+int main(){
+    Stock testingAStock("AAA", 0.5);
+    //std::cout << testingAStock.GetSharePrice() << std::endl;
+    testingAStock.Print();
 }
 
 
