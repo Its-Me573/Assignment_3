@@ -24,6 +24,21 @@ double DividendStock::GetMarketValue() const{
     return (Stock::GetMarketValue() + dividends);
 }
 
+/** Returns the total dividends accumulated
+* @return value of dividends
+*/
+double DividendStock::GetDividends() const{
+    return dividends;
+}
+
+void DividendStock::Print() const{
+    std::cout << "DividendStock (" << GetSymbol() << "):" << std::endl;
+    std::cout << " value: $ " << std::fixed << std::setprecision(2) << GetMarketValue() << std::endl;
+    std::cout << "  cost: $ " << std::fixed << std::setprecision(2) << GetCost() << std::endl;
+    std::cout << "profit: $ " << std::fixed << std::setprecision(2) << GetProfit() << std::endl;
+}
+
+
 
 int main(){
     DividendStock testingDividend("sixtyseven", 67.0);
