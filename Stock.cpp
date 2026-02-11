@@ -16,15 +16,41 @@ Stock::Stock(std::string symbol, double sharePrice = 0.0){
 */
 void Stock::Purchase(int shares, double sharePrice){
     this->shares += shares;
-    this->cost =+ this->shares*sharePrice;
+    cost =+ this->shares*sharePrice;
 }
 
 /** return the symbol of the stock
 * @return the symbol of the stock 
 */
 std::string Stock::GetSymbol() const{
-    return this->symbol;
+    return symbol;
 }
+
+/** return the total number of shares owned
+* @return the int of total shares owned
+*/
+int Stock::GetShares() const{
+    return shares;
+}
+
+/** return the current share price
+* @return double of current share price 
+*/
+double Stock::GetSharePrice() const{
+    return sharePrice;
+}
+
+/** updates the current share price to the formal parameter value
+* @param sharePrice is the new share price
+*/
+void Stock::SetSharePrice(double sharePrice){
+    this->sharePrice = sharePrice;
+}
+
+
+
+
+
 
 
 
