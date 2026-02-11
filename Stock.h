@@ -1,3 +1,6 @@
+#ifndef Stock_H
+#define Stock_H
+
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -21,3 +24,5 @@ class Stock{
         double GetProfit() const;
         void Print() const;
 };
+
+#endif
